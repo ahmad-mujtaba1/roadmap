@@ -1,8 +1,3 @@
-handleButton = () => {
-  document.location = "index.html";
-  console.log("clicked");
-};
-
 // async function pending() {
 //   let response = await fetch("https://api.github.com/users");
 //   if (response.ok) {
