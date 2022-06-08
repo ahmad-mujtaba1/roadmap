@@ -140,3 +140,8 @@ span.foot {
 .root{
 width:fit-content;
 }
+table,
+th,
+td {
+    border: 1px solid black;
+}

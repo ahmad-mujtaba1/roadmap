@@ -3,22 +3,18 @@ handleButton = () => {
   console.log("clicked");
 };
 
-// async function pending() {
-//   let response = await fetch("https://api.github.com/users");
-//   if (response.ok) {
-//     let json = await response.json();
-//     console.log("working");
-//     //  console.log(json[0]);
-//   }
-// }
-// pending();
+async function pending() {
+  url = "https://api.github.com/users?per_page=2";
+  fetch(url).then(responses);
+}
+pending();
 
 let promise = new Promise(async function (resolve, reject) {
-  resolve = await fetch("https://api.github.com/users");
+  resolve = await fetch("https://api.github.com/users?per_page=3");
   if (resolve) {
-    let json = await resolve.json();
+    const json = await resolve.json();
     console.log("working");
-    console.log(json[0]);
+    console.log(json);
   } else {
     reject = "error in loading";
     console.log(reject);
