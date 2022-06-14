@@ -1,6 +1,4 @@
 import React from "react";
-import Home from "./home";
-import About from "./about";
 import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (

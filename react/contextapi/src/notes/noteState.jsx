@@ -1,5 +1,4 @@
 import React from "react";
-
 import NoteContext from "./noteContext";
 const NoteState = (props) => {
   const state = {
@@ -7,7 +6,7 @@ const NoteState = (props) => {
     learning: "react",
   };
   return (
-    <NoteContext.provider value={state}>{props.childeren}</NoteContext.provider>
+    <NoteContext.Provider value={state}>{props.childeren}</NoteContext.Provider>
   );
 };
 export default NoteState;
