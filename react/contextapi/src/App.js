@@ -1,29 +1,34 @@
 import "./App.css";
-import NoteState from "./notes/noteState";
-import NoteContext from "./notes/noteContext";
-import About from "./components/about";
-import Home from "./components/home";
-import {
-  Routes, // instead of "Switch"
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { useState } from "react";
+import { UserContext } from "./notes/UserContext";
+import { About } from "./components/about";
+import { Home } from "./components/home";
+import { Route, BrowserRouter as Router, Link, Routes } from "react-router-dom";
 import React from "react";
-import Navbar from "./components/navbar";
 
 function App() {
+  const [value, setValue] = useState("hello");
   return (
-    <>
-      <BrowserRouter>
-        <Navbar />
-        <NoteState>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
+        <UserContext.Provider value={{ value, setValue }}>
           <Routes>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
           </Routes>
-        </NoteState>
-      </BrowserRouter>
-    </>
+        </UserContext.Provider>
+      </div>
+    </Router>
   );
 }
 
